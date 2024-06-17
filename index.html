@@ -1,116 +1,406 @@
 <!doctype html>
 <html lang="ko">
-  <head>
+
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JPOP 紹介</title>
+    <title>JPOP紹介</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="solution-style.css">
+    <link rel="stylesheet" type="text/css" href="solution-style.css">
 
     <!-- 구글 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Noto+Sans+KR:wght@400;700&display=swap"
         rel="stylesheet">
+
+        <style>
+        body{background-color:#333333;}
+        
+        
+        #home{
+    position: relative;/*h1の中央寄せ配置の起点とするためのrelative*/
+    height: 100vh;/*高さを全画面にあわせる*/
+} 
+
+#video-area{
+    position: fixed;
+    z-index: -1;/*最背面に設定*/
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+    overflow: hidden;
+}
+
+#video {
+    /*天地中央配置*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*縦横幅指定*/
+    width: 177.77777778vh; /* 16:9 の幅→16 ÷ 9＝ 177.77% */
+    height: 56.25vw; /* 16:9の幅 → 9 ÷ 16 = 56.25% */
+    min-height: 100%;
+    min-width: 100%;}
+        
+        
+        </style>
+
 </head>
-   
 
-<body>
-  <!-- 네비게이션 영역 시작 -->
-  
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-          <div class="container">
-  
-              <a class="gugi-font navbar-brand" href="#home">JPOP紹介</a>
-  
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
-                  aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
 
-        <div class="collapse navbar-collapse" id="nav-menu">
-            <ul class="navbar-nav ms-auto my-2">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about-chef">Artist 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Artist 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="#service">Artist 3</a></li>
-                <li class="nav-item"><a class="nav-link" href="#blog">Artist 4</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Community</a></li>
-            </ul>
+<body data-bs-spy="scroll" data-bs-target="#nav-menu">
+
+    
+    <!-- 네비게이션 영역 시작 -->
+    <nav class="navbar navbar-expand-md  fixed-top navbar-light fixed-top"  style="background-color:
+    #ffe4e1	;">
+        <div class="container">
+                
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu"
+                aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="navbar-nav ms-auto my-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Artist</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio1">1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio2">2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio3">3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio4">4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sns">Official</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    <!-- 네비게이션 영역 끝 -->
 
-<!-- 네비게이션 영역 끝 -->
 
-<!-- 헤더 영역 시작 -->
+    <!-- 헤더 영역 시작 -->
+    <section id="home">
+    <header id="home" class="d-flex flex-column justify-content-center align-items-center vh-100 ">
+
+
+        <h1 class="display-3 fw-bold mb-5 text-dark">J-POP 추천</h1>
+        <h4 class="fs-2 mb-3"></h4>
+        <p class="lead mb-5 text-dark">일본인이 추천하는 J-POP 꼭 들어보세요</p>
+     
+            
+            
+            <div id="video-area">
+                <video id="video" poster="img/movie.jpg" webkit-playsinline playsinline muted autoplay loop>
+                <source src="web制作　写真\65387-514139032_tiny.mp4" type="video/mp4">
+                </video>
+                <!--/video-area--></div>
+
+    </header>
+</section>
+    <!-- 헤더 영역 끝 -->
+
+
+    
+
+
+<!-- 블로그 섹션 시작 -->
 <section class="container overflow-hidden py-5" id="blog">
 
-  <div class="text-center py-5">
-      <h1 class="fw-bold">JPOP 紹介</h1>
-        <p>日本人が紹介するJPOPをぜひ聴いてみてください</h2>
-      <p class="lead text-muted">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, adipisci?</p>
-  </div>
+    <div class="text-center py-5">
+        <h2 class="fw-bold text-white">Artist</h2>
+    </div>
 
-<!-- 헤더 영역 끝 -->
+    <div class="row pb-5 gy-4">
+        <div class="col-sm-6 col-lg">
+            <div class="card">
+                <img src="C:\Users\s-eto\OneDrive\デスクトップ\webページ制作\web制作　写真\image_123650291 (14).JPG" alt="블로그 1" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3 class="card-title fs-4">Hoshino Gen</h3>
+                    <p class="card-text">星野源 / 호시노 겐</p>
+                    <a href="#portfolio1" class="btn btn-warning btn-sm">read more</a>
+                </div>
+            </div>
+        </div>
 
-<!-- Artist 소개 섹션 시작 -->
-  <div class="row pb-5 gy-4">
+        <div class="col-sm-6 col-lg">
+            <div class="card">
+                <img src="C:\Users\s-eto\OneDrive\デスクトップ\webページ制作\web制作　写真\image_123650291 (16).JPG" alt="블로그 2" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3 class="card-title fs-4">Fujii Kaze</h3>
+                    <p class="card-text">藤井風 / 후지이 카제</p>
+                    <a href="#portfolio2" class="btn btn-warning btn-sm">read more</a>
+                </div>
+            </div>
+        </div>
 
-      <div class="col-sm-6 col-lg">
-          <div class="card">
-              <img src="images/blog1.jpg" alt="星野源" class="card-img-top">
-              <div class="card-body text-center">
-                  <h3 class="card-title fs-4">星野源</h3>
-                  <p class="card-text">生年月日・出身地など</p>
-                  <a href="#" class="btn btn-warning btn-sm">おすすめ曲見る</a>
-              </div>
-          </div>
+        <div class="col-sm-6 col-lg">
+            <div class="card">
+                <img src="web制作　写真\image_123650291 (13).JPG" alt="블로그 3" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3 class="card-title fs-4">Official HIGE dandism</h3>
+                    <p class="card-text">Official髭男dism</p>
+                    <a href="#portfolio3" class="btn btn-warning btn-sm">read more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg">
+            <div class="card">
+                <img src="C:\Users\s-eto\OneDrive\デスクトップ\webページ制作\web制作　写真\image_123650291 (15).JPG" alt="블로그 4" class="card-img-top">
+                <div class="card-body text-center">
+                    <h3 class="card-title fs-4">Aimyon</h3>
+                    <p class="card-text">あいみょん / 아이묭</p>
+                    <a href="#portfolio4" class="btn btn-warning btn-sm">read more</a>
+                </div>
+            </div>
+        </div>
       </div>
-
-<div class="col-sm-6 col-lg">
-  <div class="card">
-      <img src="images/blog2.jpg" alt="藤井風" class="card-img-top">
-      <div class="card-body text-center">
-          <h3 class="card-title fs-4">藤井風</h3>
-          <p class="card-text">紹介</p>
-          <a href="#" class="btn btn-warning btn-sm">おすすめ曲見る</a>
-      </div>
-  </div>
-</div>
-
-<div class="col-sm-6 col-lg">
-  <div class="card">
-      <img src="images/blog3.jpg" alt="Official HIGE dandizm" class="card-img-top">
-      <div class="card-body text-center">
-          <h3 class="card-title fs-4">Official HIGE dandizm</h3>
-          <p class="card-text">紹介</p>
-          <a href="#" class="btn btn-warning btn-sm">おすすめ曲見る</a>
-      </div>
-  </div>
-</div>
-
-<div class="col-sm-6 col-lg">
-  <div class="card">
-      <img src="aims-thumb-700xauto-204716.jpg" alt="あいみょん" class="card-img-top">
-      <div class="card-body text-center">
-          <h3 class="card-title fs-4">あいみょん</h3>
-          <p class="card-text">紹介</p>
-          <a href="#" class="btn btn-warning btn-sm">おすすめ曲見る</a>
-      </div>
-  </div>
-</div>
-</div>
 
 </section>
-<!-- Artist 소개　섹션 끝 -->
+<!-- 블로그 섹션 끝 -->
 
-<!-- Artist 1 섹션 시작 -->
+<!-- 源さん포트폴리오 섹션 시작 -->
+
+<section class=" py-5" id="portfolio1">
+
+    <div class="container overflow-hidden">
+        <div class=" text-white py-5">
+            
+
+        <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-md-6">
+            <img src="web制作　写真\image_123650291 (14).JPG" alt="쉐프 프로필 사진" class="img-fluid">
+        </div>
+
+        <div class="col-md-7 col-lg-5 px-lg-5">
+            <h2 class="fw-bold mb-2">Hoshino Gen</h2>
+
+            <p class="lh-lg">1981.1.28</p><br><br>
+            
+            <div class="row g-4">
+                
+                <div class="col-sm-6 col-lg-5">
+                    <img src="アルバムジャケット写真\IMG_8119.jpeg" alt="포트폴리오 사진 1" class="img-fluid "></a>
+                </div>
+                
+                <div class="col-sm-6 col-lg-5">
+                    <br>대표곡<br><br>
+                    <p><a href="https://youtu.be/jhOVibLEDhA?si=0PAuzEdS-nvvKXOI" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Koi 
+                    <p><a href="https://youtu.be/7gcCRAl58u4?si=xwv3S2bW5KokiPnH" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;SUN
+                </div>
+
+                <div class="col-sm-6 col-lg-5">
+                   <img src="アルバムジャケット写真\IMG_8120.jpeg" alt="포트폴리오 사진 2" class="img-fluid "></a>
+                </div>
+
+                
+                <div class="col-sm-6 col-lg-5">
+                    <br>추천곡<br><br>
+                    <p><a href="https://youtu.be/F4kUnm4nOpI?si=ia51VXEeqQfunXiN" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Week End
+                    <p><a href="https://youtu.be/ilnLczvLGAY?si=a2tJ0d8n5EIKCMSp" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;FUSHIGI
+                </div>
+                </p>
+                
+            </div>
+        </div>    
+    </div>
+</section>
+<!-- 포트폴리오 섹션 끝 -->
 
 
-<!-- Artist 1 섹션 끝 -->
+
+<!-- 風さん포트폴리오 섹션 시작 -->
+<section class="py-5" id="portfolio2">
+
+    <div class="container overflow-hidden">
+        <div class=" text-white py-5">
+            
+<div class="row justify-content-center align-items-center mb-5">
+    <div class="col-md-6">
+        <img src="web制作　写真\image_123650291 (16).JPG" alt="쉐프 프로필 사진" class="img-fluid">
+    </div>
+
+    <div class="col-md-7 col-lg-5 px-lg-5">
+        <h2 class="fw-bold mb-2">Fujii Kaze</h2>
+
+        <p class="lh-lg">1997.6.14</p><br><br>
+        
+        <div class="row g-4">
+            
+            <div class="col-sm-6 col-lg-5">
+                <img src="アルバムジャケット写真\IMG_8123.jpeg" alt="포트폴리오 사진 1" class="img-fluid ">
+            </div>
+            
+            <div class="col-sm-6 col-lg-5">
+                <br>대표곡<br><br>
+                <p><a href="https://youtu.be/Nt6ZwuVzOS4?si=0qjxK3JbQszT9A32" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Nan-Nan
+                <p><a href="https://youtu.be/vkPfKnUaq5k?si=V_jU-nudpEr3kiZj" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Garden
+            </div>
+
+            <div class="col-sm-6 col-lg-5">
+                <img src="アルバムジャケット写真\IMG_8121.png" alt="포트폴리오 사진 3" class="img-fluid ">
+            </div>
+
+            <div class="col-sm-6 col-lg-5">
+                <br>추천곡<br><br>
+                <p><a href="https://youtu.be/ptiK8U4WlSc?si=coDQGVMiV68ryYjy" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Overflowing
+                <p><a href="https://youtu.be/kQvT37OzkP8?si=MwZytJkWBf1xf0mp" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Seishun Sick 
+            </div>
+
+            </p>
+          
+        </div>
+    </div>    
+</div>
+</section>
+<!-- 포트폴리오 섹션 끝 -->
+
+<!-- ひげだん포트폴리오 섹션 시작 -->
+<section class="py-5" id="portfolio3">
+
+    <div class="container overflow-hidden">
+        <div class=" text-white py-5">
+            
+
+        <div class="row justify-content-center align-items-center mb-5">
+        <div class="col-md-6">
+            <img src="web制作　写真\image_123650291 (13).JPG" alt="쉐프 프로필 사진" width height="640">
+        </div>
+
+        <div class="col-md-7 col-lg-5 px-lg-5">
+            <h2 class="fw-bold mb-2">Official HIGE dandism</h2>
+
+            <p class="lh-lg">2012.6.7-</p><br><br>
+            
+            <div class="row g-4">
+                
+                <div class="col-sm-6 col-lg-5">
+                    <img src="アルバムジャケット写真\スクリーンショット 2024-06-12 022202.jpg" alt="포트폴리오 사진 1" class="img-fluid ">
+                </div>
+                
+                <div class="col-sm-6 col-lg-5">
+                    <br>대표곡<br><br>
+                    <p><a href="https://youtu.be/TQ8WlA2GXbk?si=93fnceO8RReIsx_B" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Pretender
+                    <p><a href="https://youtu.be/CbH2F0kXgTY?si=sjWvQT_rg8lZwate" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Mixed Nuts
+                </div>
+                <div class="col-sm-6 col-lg-5">
+                    <img src="アルバムジャケット写真\20230427-higedan-99.jpg" alt="포트폴리오 사진 3" class="img-fluid ">
+                </div>
+
+                <div class="col-sm-6 col-lg-5">
+                    <br>추천곡<br><br>
+                    <p><a href="https://youtu.be/oLrp9uTa9gw?si=MfL0aXUps2QnEs5O" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;TATTOO
+                    <p><a href="https://youtu.be/cMLTX2FClxw?si=mKNs6kqHCuxgY8CT" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;Vintage
+                </div>
+                </p>
+                
+            </div>
+        </div>    
+    </div>
+</section>
+<!-- 포트폴리오 섹션 끝 -->
+
+
+<!-- あいみょん포트폴리오 섹션 시작 -->
+<section class="py-5" id="portfolio4">
+
+    <div class="container overflow-hidden">
+        <div class=" text-white py-5">
+            
+<div class="row justify-content-center align-items-center mb-5">
+    <div class="col-md-6">
+        <img src="web制作　写真\image_123650291 (15).JPG" alt="쉐프 프로필 사진" class="img-fluid">
+    </div>
+
+    <div class="col-md-7 col-lg-5 px-lg-5">
+        <h2 class="fw-bold mb-2">Aimyon</h2>
+
+        <p class="lh-lg">1995.3.6</p><br><br>
+        
+        <div class="row g-4">
+            
+            <div class="col-sm-6 col-lg-5">
+                <img src="アルバムジャケット写真\aimyong_jkt201802.webp" alt="포트폴리오 사진 1" class="img-fluid ">
+            </div>
+            
+            <div class="col-sm-6 col-lg-7">
+                <br>대표곡<br><br>
+                <p><a href="https://youtu.be/9qRCARM_LfE?si=3qyKAKcxcKte7T_G" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;사랑을 전하고 싶다든가
+                <p><a href="https://youtu.be/0xSiBpUdW4E?si=NTJz147ULR7xvLOW" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;마리골드
+            </div>
+
+            <div class="col-sm-6 col-lg-5">
+                <img src="アルバムジャケット写真\aimyon_jkt20230607.avif" alt="포트폴리오 사진 3" class="img-fluid ">
+            </div>
+
+            <div class="col-sm-6 col-lg-7">
+                <br>추천곡<br><br>
+                <p><a href="https://youtu.be/JuyQQUqD64c?si=nEFKeqYgVIFrB2BW" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;사랑꽃
+                <p><a href="https://youtu.be/iytiWFxt09w?si=SH2GHEvq6yVgg58f" target="_blank" class="btn btn-outline-danger px-2"><i class="bi bi-youtube"></i></a> &nbsp;&nbsp;&nbsp;사랑을 알 때까지는
+            </div>
+
+            </p> 
+        </div>
+    </div>    
+</div>
+</section>
+<!-- 포트폴리오 섹션 끝 -->
+
+<!-- SNS 섹션 시작 -->
+
+    <section class="container-fluid px-5 text-center" id="sns" style="background-color:#333333;">
+        <div class="text-center py-5">
+            
+        
+            <h3 class="lead text-white">Official YouTube Channel</h3>
+        </div>
+
+        <div class="row gy-3">
+            <div class="col-md-3">
+                <div class="shadow p-4 border-bottom border-4 border-dark" style="background-color: #FFF5EE;">
+                    
+                    
+                    <h3 class="fw-bold fs-5 py-2 text-dark">Hoshino Gen</h3>
+                    <hr>
+                    <p class="text-muted"><a href="https://youtube.com/@genhoshino?si=I265C5fOznwcIgvG" target="_blank" class="btn btn-danger px-lg-5" style="background-color:#990000; border-color: #990000;"><i class="bi bi-youtube"></i></a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="shadow p-4 border-bottom border-4 border-dark" style="background-color: #FFF5EE;">
+                    
+                    
+                    <h3 class="fw-bold fs-5 py-2 text-dark">Fujii Kaze</h3>
+                    <hr>
+                    <p class="text-muted"><a href="https://youtube.com/@fujiikaze?si=LgBXlccZVOnejcWY" target="_blank" class="btn btn-danger px-lg-5" style="background-color:#990000; border-color: #990000;"><i class="bi bi-youtube"></i></a></p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="shadow p-4 border-bottom border-4 border-dark" style="background-color: #FFF5EE;">
+                       
+                    <h3 class="fw-bold fs-5 py-2 text-dark">Official HIGE dandism</h3>
+                    <hr>
+                    <p class="text-muted"><a href="https://youtube.com/@officialhigedandism?si=ASLwwOSevOa3Azb3" target="_blank" class="btn btn-danger px-lg-5" style="background-color:#990000; border-color: #990000;"><i class="bi bi-youtube"></i></a></p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="shadow p-4 border-bottom border-4 border-dark" style="background-color: #FFF5EE;">
+                    
+                    <h3 class="fw-bold fs-5 py-2 text-dark">Aimyon</h3>
+                    <hr>
+                    <p class="text-muted"><a href="https://youtube.com/@aimyong?si=aWN17sBR2sxS60fP" target="_blank" button class="btn btn-dark px-lg-5"  style="background-color:#990000; border-color: #990000;"><i class="bi bi-youtube"></i></a></p>
+                   
+                </div><br><br><br>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -119,9 +409,12 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-  </body>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
-
-
-
